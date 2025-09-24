@@ -1,0 +1,230 @@
+/* General Styles */
+<style>
+  /* Background biru dengan motif teknologi */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e3f2fd;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(67, 98, 238, 0.562) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 40%),
+      linear-gradient(135deg, #0d47a1, #1976d2, #2196f3);
+    background-size: 200% 200%;
+    animation: gradientMove 20s ease infinite;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Tambahkan grid tipis seperti jalur teknologi */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none; /* biar tidak mengganggu klik */
+  }
+
+  /* Section agar tampak seperti kartu */
+  section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  h1, h2, h3 {
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+
+  p, li, a {
+    color: #e3f2fd;
+  }
+</style>
+
+
+  @keyframes gradientFlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* Buat setiap section terlihat "kartu mengambang" */
+  section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  h1, h2, h3 {
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  p, li, a {
+    color: #e3f2fd;
+  }
+</style>
+
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #0d47a1, #1976d2); /* Gradien biru */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #bbdefb; /* Biru muda */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+header {
+    background: linear-gradient(135deg, #bbdefb, #e3f2fd); /* Gradien biru muda */
+    color: #0d47a1;
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+    background: #ffffff; /* Latar belakang putih */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0d47a1; /* Biru gelap */
+}
+
+section p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* Buttons */
+.btn {
+    background: #0d47a1; /* Biru gelap */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #1565c0; /* Biru lebih terang */
+    transform: scale(1.05);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+    background: #e3f2fd; /* Biru sangat muda */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #bbdefb; /* Biru muda */
+}
+
+table thead {
+    background: #0d47a1; /* Biru gelap */
+    color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background: #bbdefb; /* Biru muda */
+}
+
+table tbody tr:hover {
+    background: #90caf9; /* Biru lebih terang */
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0d47a1, #1976d2); /* Gradien biru */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Images */
+img {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');

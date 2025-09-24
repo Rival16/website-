@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Tugas Akhir</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      animation: bounce 2s infinite;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Navbar */
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 0 0 15px 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #004aad;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ff4081;
+      transform: scale(1.1);
+      border-bottom: 2px solid #ff4081;
+      padding-bottom: 3px;
+    }
+
+    /* Konten utama */
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 12px rgba(0,0,0,0.1);
+    }
+
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #004aad;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0px -3px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Animasi lucu */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WEBSITE TUGAS AKHIR</h1>
+    <p>Website TUGAS AKHIR PKL</p>
+  </header>
+
+  <nav>
+    <a href="profil.html">Profil</a>
+    <a href="struktur.html">Struktur</a>
+    <a href="pengumuman.html">Pengumuman</a>
+    <a href="modul praktikum.html">Modul Praktikum</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <main>
+    <h2>Beranda</h2>
+    <p>Ini adalah halaman utama. Klik menu di atas agar dapat melihat isi dari web ini.</p>
+  </main>
+
+  <footer>
+    © TUGAS AKHIR PKL 2025.
+  </footer>
+
+</body>
+</html>
