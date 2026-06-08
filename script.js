@@ -633,7 +633,7 @@ async function submitComment() {
     return;
   }
 
-  if (SUPABASE_URL === "GANTI_DENGAN_SUPABASE_URL_KAMU") {
+  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/") {
     showStatus(
       "⚠️ Setup Supabase dulu ya! Cek README.md untuk tutorialnya.",
       "error",
