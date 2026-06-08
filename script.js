@@ -634,14 +634,6 @@ async function submitComment() {
     return;
   }
 
-  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
-    showStatus(
-      "⚠️ Setup Supabase dulu ya! Cek README.md untuk tutorialnya.",
-      "error",
-    );
-    return;
-  }
-
   const btn = document.querySelector(".comment-submit-btn");
   btn.disabled = true;
   btn.textContent = "Mengirim... 💌";
@@ -676,12 +668,6 @@ async function submitComment() {
 
 async function loadComments() {
   const list = document.getElementById("comments-list");
-
-  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
-    list.innerHTML =
-      '<div class="comments-loading">⚙️ Koneksikan hati untuk melihat komentar</div>';
-    return;
-  }
 
   try {
     const res = await fetch(
