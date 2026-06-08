@@ -8,7 +8,7 @@
 // Ganti dengan URL & KEY dari Supabase kamu!
 // (lihat tutorial di bawah / README.md)
 // ==============================
-const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2aWxxdXd1dXVqeGdlYm5vcXJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5MTQ2NjksImV4cCI6MjA5NjQ5MDY2OX0.42_kD2I-I9xLBag5KM1LwgwRCVwelh1kbS0CMvcq_hs";
 
 // ==============================
@@ -430,9 +430,9 @@ function selectSayang(btn, msg) {
   result.classList.remove("hidden");
   let message = "";
   if (msg.includes("Sayang banget")) {
-    message = `🩷🩷🩷 "${msg}" — si Sayang bahagia banget bacanya Bubub!! 🥹✨`;
+    message = `😊 "${msg}" — si Sayang bahagia banget bacanya Bubub!! 🤭`;
   } else if (msg.includes("Lumayan")) {
-    message = `😊 "${msg}" — oke deh, lumayan ya~ si Sayang terima 🩷`;
+    message = `😊 "${msg}" — oke deh, lumayan ya~ si Sayang terima `;
   } else {
     message = `😢 "${msg}" — bohong yakin? Si Sayang ga percaya wkwk 🤭`;
   }
@@ -445,7 +445,7 @@ function selectSayang(btn, msg) {
 // 🎊 CONFETTI
 // ==============================
 function launchConfetti() {
-  const emojis = ["🩷", "✨", "🌸", "💕", "🎀", "💝"];
+  const emojis = ["🥳", "✨", "🌸", "💕", "🎀", "💝"];
   for (let i = 0; i < 30; i++) {
     setTimeout(() => {
       const el = document.createElement("div");
@@ -494,10 +494,10 @@ function renderQuiz() {
         <p style="color:var(--text-mid);font-style:italic;margin-bottom:1.5rem">
           ${
             quizScore >= 4
-              ? "🩷 Jujur banget Bubub! Si Sayang senang~"
+              ? "♡ Jujur banget Bubub! Si Sayang senang~"
               : quizScore >= 2
                 ? "😄 Lumayan jujur nih wkwk"
-                : "🤭 Kayaknya Bubub suka bohong nih wkwk"
+                : "🤭 Kayaknya Bubub jadi suka bohong nih wkwk"
           }
         </p>
         <button class="quiz-next-btn" style="display:inline-flex" onclick="initQuiz()">Main Lagi? 🔄</button>
@@ -574,7 +574,7 @@ function calcDays() {
 // ==============================
 function createParticles() {
   const container = document.getElementById("particles-container");
-  const symbols = ["🌸", "✨", "💕", "🌷", "🩷", "💫", "🎀"];
+  const symbols = ["🌸", "✨", "💕", "🌷", "🦋", "💫", "🎀"];
   for (let i = 0; i < 18; i++) {
     const p = document.createElement("div");
     p.className = "particle";
@@ -593,7 +593,7 @@ function createParticles() {
 // ==============================
 function initFloatingHearts() {
   const container = document.getElementById("floating-hearts");
-  const hearts = ["🩷", "💕", "✨", "🌸"];
+  const hearts = ["🦋", "💕", "✨", "🌸"];
   for (let i = 0; i < 12; i++) {
     const h = document.createElement("div");
     h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
@@ -676,7 +676,7 @@ async function submitComment() {
 async function loadComments() {
   const list = document.getElementById("comments-list");
 
-  if (SUPABASE_URL === "GANTI_DENGAN_SUPABASE_URL_KAMU") {
+  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
     list.innerHTML =
       '<div class="comments-loading">⚙️ Koneksikan hati untuk melihat komentar</div>';
     return;
@@ -695,7 +695,7 @@ async function loadComments() {
     const data = await res.json();
     if (!Array.isArray(data) || data.length === 0) {
       list.innerHTML =
-        '<div class="comments-loading">Belum ada pesan. Jadilah yang pertama! 🩷</div>';
+        '<div class="comments-loading">Belum ada pesan. Jadilah yang pertama! </div>';
       return;
     }
     list.innerHTML = data
@@ -703,7 +703,7 @@ async function loadComments() {
         (c) => `
       <div class="comment-item">
         <div class="comment-item-header">
-          <span class="comment-item-name">🩷 ${escapeHtml(c.name)}</span>
+          <span class="comment-item-name"> ${escapeHtml(c.name)}</span>
           <span class="comment-item-time">${formatDate(c.created_at)}</span>
         </div>
         <div class="comment-item-text">${escapeHtml(c.message)}</div>

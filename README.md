@@ -166,10 +166,10 @@ Tunggu 2-3 menit, website live di:
 ## 🔧 Kustomisasi Teks
 
 Cari teks berikut di `index.html` dan ganti sesuai kebutuhan:
-- `Bubub` → panggilan si dia
-- `si Sayang` → panggilanmu
-- `Ahmad Rival Fikir` → namamu
-- `Gheriya Rahima` → nama dia
+- `sayang` → panggilan si dia
+- `seng` → panggilanmu
+- `arrval` → namamu
+- `gea` → nama dia
 - Isi surat cinta di section `.letter-body`
 - Alasan suka di `.reasons-grid`
 
@@ -191,5 +191,5 @@ Cari teks berikut di `index.html` dan ganti sesuai kebutuhan:
 
 ---
 
-*Semoga Bubub suka ya~ 🩷*
+*Semoga suka ya~ ♡*
 *— Ahmad Rival Fikir (si Sayang)*
