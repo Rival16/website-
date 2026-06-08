@@ -8,7 +8,7 @@
 // Ganti dengan URL & KEY dari Supabase kamu!
 // (lihat tutorial di bawah / README.md)
 // ==============================
-const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co";
+const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2aWxxdXd1dXVqeGdlYm5vcXJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5MTQ2NjksImV4cCI6MjA5NjQ5MDY2OX0.42_kD2I-I9xLBag5KM1LwgwRCVwelh1kbS0CMvcq_hs";
 
 // ==============================
@@ -676,7 +676,7 @@ async function submitComment() {
 async function loadComments() {
   const list = document.getElementById("comments-list");
 
-  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
+  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/") {
     list.innerHTML =
       '<div class="comments-loading">⚙️ Koneksikan hati untuk melihat komentar</div>';
     return;
