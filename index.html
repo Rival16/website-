@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Bubub 💝</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ✨ FLOATING PARTICLES -->
+    <div id="particles-container"></div>
+
+    <!-- 🎵 MUSIC OVERLAY (paksa buka musik) -->
+    <div id="music-overlay" class="music-overlay">
+      <div class="overlay-content">
+        <div class="overlay-heart">💝</div>
+        <h2 class="overlay-title">
+          Ada sesuatu untukmu,<br /><span>Bubub</span>💝
+        </h2>
+        <p class="overlay-subtitle">dari si Sayang yang selalu kangen</p>
+        <button id="play-btn" class="play-button" onclick="startExperience()">
+          <span class="play-icon">▶</span>
+          <span>Buka dengan Musik</span>
+        </button>
+        <p class="overlay-hint">*dengan headset lebih bagus ya bubub 🎧*</p>
+      </div>
+    </div>
+
+    <!-- 🎵 MUSIC PLAYER (Spotify style) -->
+    <div id="music-player" class="music-player hidden">
+      <div class="player-left">
+        <div class="player-thumb">🎵</div>
+        <div class="player-info">
+          <div id="song-title" class="song-title">Loading...</div>
+          <div id="song-artist" class="song-artist">—</div>
+        </div>
+      </div>
+      <div class="player-center">
+        <div class="player-controls">
+          <button class="ctrl-btn" onclick="prevSong()">⏮</button>
+          <button
+            class="ctrl-btn play-pause"
+            id="play-pause-btn"
+            onclick="togglePlay()"
+          >
+            ⏸
+          </button>
+          <button class="ctrl-btn" onclick="nextSong()">⏭</button>
+        </div>
+        <div class="progress-bar-wrap">
+          <span id="current-time">0:00</span>
+          <div class="progress-bar" onclick="seekMusic(event)">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <span id="total-time">0:00</span>
+        </div>
+      </div>
+      <div class="player-right">
+        <button
+          class="ctrl-btn lyrics-toggle-btn"
+          id="lyrics-toggle-btn"
+          onclick="toggleLyrics()"
+        >
+          🎤 Lirik
+        </button>
+        <input
+          type="range"
+          id="volume-slider"
+          class="volume-slider"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.7"
+          oninput="setVolume(this.value)"
+        />
+        <span>🔊</span>
+      </div>
+    </div>
+
+    <!-- 🎤 LYRICS SECTION -->
+    <section id="lyrics-section" class="lyrics-section hidden">
+      <div class="lyrics-header">
+        <p class="lyrics-label">🎵 sedang memutar</p>
+        <h3 id="lyrics-song-name" class="lyrics-song-name">—</h3>
+      </div>
+      <div id="lyrics-container" class="lyrics-container">
+        <p class="lyrics-placeholder">♪ lirik akan muncul di sini ♪</p>
+      </div>
+    </section>
+
+    <!-- 💌 HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <p class="hero-from">dari si Sayang 🤍</p>
+        <h1 class="hero-title">Halo, <span class="highlight">Bubub</span></h1>
+        <p class="hero-subtitle">
+          Gheriya Rahima — gadis yang bikin hari-hari si Sayang jadi lebih
+          berwarna ✨
+        </p>
+        <div class="hero-scroll-hint">scroll ke bawah yuk ↓</div>
+      </div>
+      <div class="floating-hearts" id="floating-hearts"></div>
+    </section>
+
+    <!-- 🖼️ COLLAGE SECTION -->
+    <section class="collage-section">
+      <div class="section-label">📸 momen kita</div>
+      <h2 class="section-title">Foto & Video Kita</h2>
+      <p class="section-desc">kumpulan kenangan yang bikin senyum sendiri 🥹</p>
+      <div id="collage-grid" class="collage-grid">
+        <!-- JS will inject media from /asset folder -->
+        <div class="collage-empty">
+          <p>📂 Tambahkan foto & video kamu di folder <code>asset/</code></p>
+          <p>Nanti otomatis muncul di sini sebagai kolase 🖼️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💬 SAYANG METER (tombol kabur) -->
+    <section class="sayang-section">
+      <div class="section-label">🤭 iseng dikit ya</div>
+      <h2 class="section-title">Seberapa Sayang Kamu ke Aku?</h2>
+      <p class="section-desc">pilih salah satu, jujur ya bubub 🩷</p>
+      <div class="sayang-options" id="sayang-options">
+        <button
+          class="sayang-btn"
+          onclick="selectSayang(this, 'Dikit banget 😐')"
+        >
+          Dikit banget 😐
+        </button>
+        <button
+          class="sayang-btn escape-btn"
+          id="escape-btn"
+          onmouseover="escapeButton(this)"
+          ontouchstart="escapeButton(this)"
+        >
+          Engga sayang 😤
+        </button>
+        <button
+          class="sayang-btn"
+          onclick="selectSayang(this, 'Lumayan sayang 🥺')"
+        >
+          Lumayan sayang 🥺
+        </button>
+        <button
+          class="sayang-btn gold"
+          onclick="selectSayang(this, 'Sayang banget!! 🤍🤍')"
+        >
+          Sayang banget!! 🤍🤍
+        </button>
+      </div>
+      <div id="sayang-result" class="sayang-result hidden"></div>
+    </section>
+
+    <!-- 💝 ALASAN SUKA -->
+    <section class="reasons-section">
+      <div class="section-label">💝 kenapa kamu spesial</div>
+      <h2 class="section-title">Hal yang Bikin Si Sayang Suka</h2>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-emoji">😊</div>
+          <h3>Senyumnya</h3>
+          <p>
+            Senyum Bubub tuh kayak charger, bikin baterai si Sayang langsung
+            penuh 🔋
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-emoji">💬</div>
+          <h3>Cara Ngomongnya</h3>
+          <p>
+            Manggil "aa" tuh bikin si Sayang meleleh setiap hari tanpa gagal 🫠
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-emoji">🧠</div>
+          <h3>Pintarnya</h3>
+          <p>Masih sekolah tapi udah tau cara bikin si Sayang kagum terus 📚</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-emoji">🌸</div>
+          <h3>Karakternya</h3>
+          <p>
+            Bubub tuh beda dari yang lain, ada sesuatu yang bikin ga bisa
+            dilupain ✨
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-emoji">🎀</div>
+          <h3>Lucunya</h3>
+          <p>
+            Bubub lucu tanpa sadar, itu yang paling berbahaya buat si Sayang 😭
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-emoji">🌙</div>
+          <h3>Kehadirannya</h3>
+          <p>
+            Sekadar tahu ada Bubub di dunia ini aja udah bikin hari lebih tenang
+            🤍
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎭 QUIZ BERCANDA -->
+    <section class="quiz-section">
+      <div class="section-label">🎭 tes kesetiaan wkwk</div>
+      <h2 class="section-title">Kuis Kejujuran</h2>
+      <div class="quiz-card" id="quiz-card">
+        <p id="quiz-question" class="quiz-question">Loading pertanyaan...</p>
+        <div id="quiz-options" class="quiz-options"></div>
+        <div id="quiz-result" class="quiz-result hidden"></div>
+        <button
+          class="quiz-next-btn hidden"
+          id="quiz-next-btn"
+          onclick="nextQuiz()"
+        >
+          Pertanyaan Berikutnya →
+        </button>
+      </div>
+      <div class="quiz-score">
+        Skor Kejujuran: <span id="score-display">0</span> / 5 🏆
+      </div>
+    </section>
+
+    <!-- 💌 SURAT CINTA -->
+    <section class="letter-section">
+      <div class="section-label">💌 dari hati si Sayang</div>
+      <h2 class="section-title">Surat Kecil</h2>
+      <div class="letter-card">
+        <div class="letter-header">
+          <span>Untuk Bubub tercinta,</span>
+          <span class="letter-date" id="letter-date"></span>
+        </div>
+        <div class="letter-body">
+          <p>
+            Hai Bubub, si Sayang nulis ini dengan perasaan yang agak ribet
+            sebenernya. Ribet karena banyak banget yang mau diomongin tapi
+            bingung mulai dari mana. 😅
+          </p>
+          <p>
+            Kita memang belum tau ini hubungan kita mau ke mana, tapi satu hal
+            yang si Sayang tau pasti — ada Bubub di hari-hari si Sayang itu
+            bikin semuanya beda. Lebih warna warni. Lebih berarti.
+          </p>
+          <p>
+            Si Sayang udah lulus, Bubub masih sekolah. Beda fase, beda dunia
+            mungkin. Tapi entah kenapa setiap kali Bubub manggil "aa", si Sayang
+            ngerasa dunia itu ga terlalu jauh kok 🥺
+          </p>
+          <p>
+            Website ini dibuat bukan buat nge-judge atau maksa. Cuma buat
+            bilang:
+            <strong>Bubub spesial, dan si Sayang bersyukur kenal kamu.</strong>
+          </p>
+          <p class="letter-sign">
+            Dengan sayang (yang banyak banget),<br />Ahmad Rival Fikrir<br /><em
+              >a.k.a si Sayang 🩷</em
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌸 COUNTDOWN / MEMORY -->
+    <section class="memory-section">
+      <div class="section-label">🌸 statistik persahabatan kita</div>
+      <h2 class="section-title">Fakta Lucu Tentang Kita</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="days-known">...</div>
+          <div class="stat-label">hari kenal Bubub 📅</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">kali kangen sama Bubub 🥺</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Bubub di dunia ini ✨</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">dijamin bukan PHP wkwk 😂</div>
+        </div>
+      </div>
+      <div class="date-setter">
+        <p>📅 Kapan pertama kali kenal Bubub?</p>
+        <input
+          type="date"
+          id="known-date"
+          class="date-input"
+          onchange="calcDays()"
+        />
+      </div>
+    </section>
+
+    <!-- 💬 KOMENTAR (Supabase) -->
+    <section class="comment-section">
+      <div class="section-label">💬 pesanmu untuk si Sayang</div>
+      <h2 class="section-title">Tinggalkan Pesan</h2>
+      <p class="section-desc">
+        Tulis apa aja ya Bubub, si Sayang pasti baca 🩷
+      </p>
+      <div class="comment-form">
+        <input
+          type="text"
+          id="comment-name"
+          class="comment-input"
+          placeholder="Nama kamu (misal: usep)"
+          maxlength="30"
+        />
+        <textarea
+          id="comment-text"
+          class="comment-textarea"
+          placeholder="Tulis pesanmu di sini..."
+          maxlength="300"
+          rows="4"
+        ></textarea>
+        <button class="comment-submit-btn" onclick="submitComment()">
+          Kirim Pesan 💌
+        </button>
+      </div>
+      <div id="comment-status" class="comment-status hidden"></div>
+      <div id="comments-list" class="comments-list">
+        <div class="comments-loading">memuat pesan... 🌸</div>
+      </div>
+    </section>
+
+    <!-- 🩷 FOOTER -->
+    <footer class="footer">
+      <div class="footer-heart">🌸</div>
+      <p>dibuat dengan sepenuh hati oleh <strong>Ahmad Rival Fikri</strong></p>
+      <p>khusus untuk <strong>Gheriya Rahima</strong> — si Bubub tersayang</p>
+      <p class="footer-small">
+        *status: teman dekat yang dosanya kebanyakan kangen* 😭
+      </p>
+    </footer>
+
+    <!-- AUDIO ELEMENT -->
+    <audio id="main-audio" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
