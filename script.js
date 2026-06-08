@@ -8,8 +8,9 @@
 // Ganti dengan URL & KEY dari Supabase kamu!
 // (lihat tutorial di bawah / README.md)
 // ==============================
-const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2aWxxdXd1dXVqeGdlYm5vcXJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5MTQ2NjksImV4cCI6MjA5NjQ5MDY2OX0.42_kD2I-I9xLBag5KM1LwgwRCVwelh1kbS0CMvcq_hs";
+const SUPABASE_URL = "https://svilquwuuujxgebnoqrz.supabase.co";
+const SUPABASE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2aWxxdXd1dXVqeGdlYm5vcXJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5MTQ2NjksImV4cCI6MjA5NjQ5MDY2OX0.42_kD2I-I9xLBag5KM1LwgwRCVwelh1kbS0CMvcq_hs";
 
 // ==============================
 // 🎵 PLAYLIST CONFIG
@@ -85,13 +86,13 @@ const PLAYLIST = [
 // ==============================
 const ASSETS = [
   // Contoh pengisian (sesuaikan nama file kamu):
-  { file: 'asset/foto-1.webp',  type: 'image' },
-  { file: 'asset/foto-2.webp',  type: 'image' },
-  { file: 'asset/foto-3.webp',  type: 'image' },
-  { file: 'asset/foto-4.webp',  type: 'image' },
-  { file: 'asset/foto-5.webp',  type: 'image' },
-  { file: 'asset/foto-6.webp',  type: 'image' },
-  { file: 'asset/mo-ba.webp',  type: 'image' },
+  { file: "asset/foto-1.webp", type: "image" },
+  { file: "asset/foto-2.webp", type: "image" },
+  { file: "asset/foto-3.webp", type: "image" },
+  { file: "asset/foto-4.webp", type: "image" },
+  { file: "asset/foto-5.webp", type: "image" },
+  { file: "asset/foto-6.webp", type: "image" },
+  { file: "asset/mo-ba.webp", type: "image" },
 ];
 
 // ==============================
@@ -633,7 +634,7 @@ async function submitComment() {
     return;
   }
 
-  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/") {
+  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
     showStatus(
       "⚠️ Setup Supabase dulu ya! Cek README.md untuk tutorialnya.",
       "error",
@@ -676,7 +677,7 @@ async function submitComment() {
 async function loadComments() {
   const list = document.getElementById("comments-list");
 
-  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co/rest/v1/") {
+  if (SUPABASE_URL === "https://svilquwuuujxgebnoqrz.supabase.co") {
     list.innerHTML =
       '<div class="comments-loading">⚙️ Koneksikan hati untuk melihat komentar</div>';
     return;
