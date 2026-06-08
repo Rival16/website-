@@ -192,4 +192,4 @@ Cari teks berikut di `index.html` dan ganti sesuai kebutuhan:
 ---
 
 *Semoga suka ya~ ♡*
-*— Ahmad Rival Fikir (si Sayang)*
+*— Ahmad Rival Fikri (si Sayang)*
